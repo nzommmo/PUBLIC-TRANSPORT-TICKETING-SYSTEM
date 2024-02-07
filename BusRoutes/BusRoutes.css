@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    color:#333;
+
+}
+
+#container{
+    display: flex;
+    margin-top: 5%;
+}
+#container div{
+    margin-left: 10px;
+
+}
+.resultbox ul{
+    border-top: 1px ;
+    padding: 5px 10px; 
+}
+.resultbox ul li{
+    list-style: none;
+    border-radius: 3px;
+    padding: 2px 10px;
+    cursor: pointer;
+}
+.resultbox ul li:hover{
+    background: #e9f3ff;
+    width: 150px;
+
+}
+.resultbox{
+    display: flex;
+    
+}
+.searchbox{
+    width: 600px;
+    background:#fff;
+}
