@@ -12,7 +12,7 @@
         <div>
 
             <select name="" id="Routenumber">
-        
+                <option disabled selected>Select a Route</option>        
                 <option value="125"> 125</option>
                 <option value=" 48">Route 48</option>
                 <option value="">Route 35</option>
@@ -21,26 +21,33 @@
             
                 </select>
              
-        </div>
-        <div>
-            <input type="search" value="" id="search" placeholder="Station">
-
-
-        </div>
-        
- 
-    
-    
-     
-    
+        </div>      
         <div class="searchbox">
             <div class="row">
-                <input type="text" class="input"     id="inputbox" placeholder="Destination" autocomplete="off">
+                <input type="text" class="input" value=""    id="inputbox" placeholder="Boarding Station" autocomplete="off">
                 <button>search</button>
             </div>
-            <div class="resultbox"></div>
+            <div class="resultbox" ></div>
         </div>
-    
+        <div class="searchbox1">
+            <div class="row">
+                <input type="text" class="input1" value=""    id="inputbox" placeholder="Alighting Station" autocomplete="off">
+                <button>search</button>
+            </div>
+            <div class="resultbox1" ></div>
+        </div>
+
+    </div>
+
+    <div id="containerdetails">
+        <div id="details">
+            <p>Name:<span id="Name"></span></p> 
+            <p>From:<span id="From"></span></p> 
+            <p>TO:<span id="TO"></span></p> 
+            <p>Seat No:<span id="Seatno"></span></p> 
+
+
+        </div>
 
     </div>
 

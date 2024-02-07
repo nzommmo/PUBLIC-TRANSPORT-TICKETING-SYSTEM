@@ -7,6 +7,7 @@
 
 }
 
+
 #container{
     display: flex;
     margin-top: 5%;
@@ -35,6 +36,18 @@
     
 }
 .searchbox{
-    width: 600px;
-    background:#fff;
+    background:white;
+}
+#containerdetails{
+    display: block;
+    margin: 10px;
+}
+#details p{
+    line-height: 30px;
+}
+#details{
+    margin-top: 5%;
+}
+.row {
+    outline: none;
 }
