@@ -7,16 +7,19 @@
     <title>Bus Routes</title>
 </head>
 <body>
-    <h2>Search For a Route</h2>
-    <div id="container">
+    <header>
+        <h2>Search For a Route</h2>
+
+    </header>
+    <div id="routecontainer">
         <div>
 
             <select name="" id="Routenumber">
                 <option disabled selected>Select a Route</option>        
-                <option value="125"> 125</option>
-                <option value=" 48">Route 48</option>
-                <option value="">Route 35</option>
-                <option value="">Route 53</option>
+                <option value="125"> Route 125</option>
+                <option value="48">Route 48</option>
+                <option value="35">Route 35</option>
+                <option value="53">Route 53</option>
             
             
                 </select>
@@ -24,32 +27,47 @@
         </div>      
         <div class="searchbox">
             <div class="row">
-                <input type="text" class="input" value=""    id="inputbox" placeholder="Boarding Station" autocomplete="off">
+                <input type="text" class="input" value="" data-target="resultbox"   id="inputbox" placeholder="Boarding Station" autocomplete="off">
+            </div>
+            <div class="resultbox" ></div>
+        </div>
+
+        <div class="searchbox">
+            <div class="row">
+                <input type="text" class="input" value=""    id="inputbox" placeholder="Alighting Station" autocomplete="off">
                 <button>search</button>
             </div>
             <div class="resultbox" ></div>
         </div>
-        <div class="searchbox1">
-            <div class="row">
-                <input type="text" class="input1" value=""    id="inputbox" placeholder="Alighting Station" autocomplete="off">
-                <button>search</button>
+
+    </div>
+
+    <section id="Booking">
+        <div id="containerdetails">
+            <div id="details">
+                <p>Name:<span id="Name">ERIC</span></p> 
+                <p>From:<span id="From"></span></p> 
+                <p>TO:<span id="TO"></span></p> 
+    
+     
             </div>
-            <div class="resultbox1" ></div>
+    
         </div>
-
-    </div>
-
-    <div id="containerdetails">
-        <div id="details">
-            <p>Name:<span id="Name"></span></p> 
-            <p>From:<span id="From"></span></p> 
-            <p>TO:<span id="TO"></span></p> 
-            <p>Seat No:<span id="Seatno"></span></p> 
-
-
+        <div id="Vehiclecontainer">
+                <h1 id="Sacco"></h1>
+                <p>Vehicle Reg No:<span id="plateno" >KDD 019A</span></h3>
+    
+                <p id="BusFrom"> </p>
+                    <p id="BusTo"></p>
+                    <p>Fare:<span id="fare" ></span></h3>
+                    <p>Seat No:<span id="Seatno"></span></p> 
+    
+            </div>
         </div>
+    
+    
 
-    </div>
+    </section>
 
 
     
