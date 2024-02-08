@@ -50,7 +50,7 @@ routesSelect.addEventListener('change', function() {
         boardingDiv.innerHTML = "Boarding: " + inputboxes[0].value;
         resultboxes[0].innerHTML = "";
         From.innerHTML = inputboxes[0].value;
-        plate.innerHTML = "KBZ 325H"
+        plate.innerHTML = "KBZ 325Hr"
         let rate = 20;
     }
         
