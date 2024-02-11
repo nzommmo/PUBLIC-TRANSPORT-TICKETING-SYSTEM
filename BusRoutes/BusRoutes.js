@@ -51,7 +51,7 @@ routesSelect.addEventListener('change', function() {
         resultboxes[0].innerHTML = "";
         From.innerHTML = inputboxes[0].value;
         plate.innerHTML = "KBZ 325Hr"
-        let rate = 20;
+        var rate = 20;
     }
         
 
