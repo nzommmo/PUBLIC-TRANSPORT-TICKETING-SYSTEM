@@ -6,5 +6,5 @@ load()
 
 var timeout = setTimeout(function(){
     window.open("login/login.html")
-},10000)
+},30000)
 clearTimeout(timeout)
