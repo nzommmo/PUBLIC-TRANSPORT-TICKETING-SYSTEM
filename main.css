@@ -1,15 +1,16 @@
 .loader {
     width: 40px;
     aspect-ratio: 1;
-    --c: linear-gradient(#000 0 0);
-    --r1: radial-gradient(farthest-side at bottom,#000 93%,#0000);
-    --r2: radial-gradient(farthest-side at top   ,#000 93%,#0000);
+    --c: linear-gradient(#fafafa 0 0);
+    --r1: radial-gradient(farthest-side at bottom,#fafafa 93%,#0000);
+    --r2: radial-gradient(farthest-side at top   ,#fafafa 93%,#0000);
     background: 
       var(--c) ,var(--r1),var(--r2),
       var(--c) ,var(--r1),var(--r2),
       var(--c) ,var(--r1),var(--r2);
     background-repeat: no-repeat;
     animation: l2 1s infinite alternate;
+    color: white;
   }
   @keyframes l2 {
     0%,25% {
@@ -38,9 +39,13 @@ div{
 h1{
     display: flex;
     justify-content: center;
+    color:white;
 }
 /*
 body{
     background-image: linear-gradient(to right,rgb(217, 142, 2),rgb(187, 167, 14));
 }
 */
+body{
+  background-color: black;
+}
