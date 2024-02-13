@@ -5,7 +5,7 @@ let keywords = [
     "Maasai Lodge",
     "Tumaini",
     "congo",
-    "Rogo"
+    "Ngong"
 ];
 
 const resultboxes = document.querySelectorAll(".resultbox");
@@ -36,22 +36,33 @@ inputboxes.forEach((inputbox, index) => {
 
 routesSelect.addEventListener('change', function() {
     let selectedValue = routesSelect.value;
+    if(inputboxes[0].value =="Rongai" && inputboxes[1].value == "Ngong"){
+    console.log("hello")
+
+
+    }
     
     if (selectedValue== 48) {
         inputboxes[0].value = "Rongai";
-        boardingDiv.innerHTML = "Boarding: " + inputboxes[0].value;
+        boardingDiv.value =  inputboxes[0].value;
         resultboxes[0].innerHTML = "";
-        From.innerHTML = inputboxes[0].value;
-        plate.innerHTML = "KAY 485T"
-        let rate = 20;
+        From.value = inputboxes[0].value;
+        plate.value = "KAY 485T"
 
     }else if(selectedValue== 125){
         inputboxes[0].value = "Ngong";
-        boardingDiv.innerHTML = "Boarding: " + inputboxes[0].value;
+        boardingDiv.value =  inputboxes[0].value;
         resultboxes[0].innerHTML = "";
-        From.innerHTML = inputboxes[0].value;
-        plate.innerHTML = "KBZ 325Hr"
+        From.value= inputboxes[0].value;
+        plate.value = "KBZ 325H"
         var rate = 20;
+    }else if(selectedValue== 35){
+        inputboxes[0].value = "Kasarani";
+        boardingDiv.value = inputboxes[0].value;
+        resultboxes[0].innerHTML = "";
+        From.value= inputboxes[0].value;
+        plate.value = "KBU 234P"
+        var rate = 15;
     }
         
 
@@ -59,8 +70,8 @@ routesSelect.addEventListener('change', function() {
 
             function calcfare(){
                 
-                fare = 0.5 * rate
-                fareamount.innerHTML = fare
+                let fare = 10 * rate
+                fareamount.value = fare
 
             }
             calcfare()
@@ -81,15 +92,12 @@ function selectInput(list, index) {
     inputboxes[index].value = list.innerHTML;
     resultboxes[index].innerHTML = "";
     if (index === 0) {
-        From.innerHTML = list.innerHTML;
-        boardingDiv.innerHTML = "Boarding: " + list.innerHTML;
-        if (list.innerHTML.toLowerCase() === "rongai") {
-            // Display "Welcome" when "Rongai" is selected
-            console.log("Welcome");
-        }
+        From.value = list.innerHTML;
+        boardingDiv.value =  list.innerHTML;
+        
     } else if (index === 1) {
-        TO.innerHTML = list.innerHTML;
-        alightDiv.innerHTML = "Alight: " + list.innerHTML;
+        TO.value= list.innerHTML;
+        alightDiv.value =  list.innerHTML;
     }
 }
 
@@ -101,3 +109,23 @@ function bookseat(){
 
 seatbook.addEventListener('click',bookseat)
 
+document.addEventListener('DOMContentLoaded', function() {
+    const seats = document.querySelectorAll('.seatbtn');
+    const selectedSeatDisplay = document.getElementById('Seatno');
+  
+    seats.forEach(seat => {
+      seat.addEventListener('click', function() {
+        // Clear selected class from all seats
+        seats.forEach(seat => {
+          seat.classList.remove('selected');
+        });
+  
+        // Add selected class to the clicked seat
+        this.classList.add('selected');
+  
+        // Update the selected seat display
+        selectedSeatDisplay.value =  this.textContent;
+      });
+    });
+  });
+  
