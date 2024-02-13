@@ -80,3 +80,27 @@ header{
     display: flex;
     justify-content: center;
 }
+#seatbook{
+    background: black;
+    color: wheat;
+    border-radius: 5px;
+    margin-inline: 2px;
+}
+#seatcontainer{
+    margin-top: 10px;
+    position: absolute;
+    top: 50%;
+    right: 45%;
+    display: none;
+
+}
+#seats{
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(50px,1fr));
+    grid-gap: 5px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    
+
+}

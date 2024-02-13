@@ -93,4 +93,11 @@ function selectInput(list, index) {
     }
 }
 
+let seats = document.getElementById("seatcontainer")
+
+function bookseat(){
+    seats.style.display ="block"
+}
+
+seatbook.addEventListener('click',bookseat)
 
