@@ -125,7 +125,38 @@ document.addEventListener('DOMContentLoaded', function() {
   
         // Update the selected seat display
         selectedSeatDisplay.value =  this.textContent;
-      });
-    });
+      })
+    })
+  })
+
+
+// Target the form and QR code container
+const form = document.getElementById('myForm');
+const qrCodeContainer = document.getElementById('qrcode');
+
+// Function to generate QR code
+function generateQRCode(data) {
+  // Clear previous QR code if any
+  qrCodeContainer.innerHTML = '';
+
+  // Generate new QR code
+  new QRCode(qrCodeContainer, {
+    text: data,
+    width: 200,
+    height: 200
   });
+}
+
+// Event listener for form submission
+form.addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form submission
+
+  // Get the data from the form input
+  const formData = new FormData(form);
+  const data = formData.get('data');
+
+  // Generate QR code using the captured data
+  generateQRCode(data);
+});
+
   

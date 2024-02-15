@@ -61,17 +61,21 @@
     
         </div>
         <div id="Vehiclecontainer">
-            <form>
-                <label for="">Vehicle Reg No</label>
-                <input type="text" name="" id="plateno">
+            <form id="bookingform">
+        <!-- <form id="bookingform" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="1f6ad7fe-a06a-4931-aee5-6178ec2b3b7a">         -->    
+               <label for="">Vehicle Reg No</label>
+                <input type="text" name="Vehicle Registration No:" id="plateno">
                 <label for="">Boarding</label>
-                <input type="text" name="" id="BusFrom">
+                <input type="text" name="Boarding" id="BusFrom">
                 <label for="">Alight</label>
-                <input type="text" name="" id="BusTo">
+                <input type="text" name="Alight" id="BusTo">
                 <label for="">Fare</label>
-                <input type="text" name="" id="fare">
+                <input type="text" name="Fare" id="fare">
                 <label for="">Seat No</label>
-                <input type="text" name="" id="Seatno">
+                <input type="text" name="Seat No" id="Seatno">
+                <br>
+                <button type="submit">Confirm Booking</button>
                 
             </form>
             </div>
@@ -111,9 +115,18 @@
     
         
     </section>
+
+    <form id="myForm">
+        <label for="data">Enter Data:</label>
+        <input type="text" id="data" name="data">
+        <button type="submit">Generate QR Code</button>
+      </form>
+      <div id="qrcode"></div>
+      
     
     
     
 </body>
 <script src="BusRoutes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4"></script>
 </html>
