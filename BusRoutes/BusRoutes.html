@@ -61,11 +61,10 @@
     
         </div>
         <div id="Vehiclecontainer">
-            <form id="bookingform">
-        <!-- <form id="bookingform" action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="1f6ad7fe-a06a-4931-aee5-6178ec2b3b7a">         -->    
+         <form id="bookingform" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="1f6ad7fe-a06a-4931-aee5-6178ec2b3b7a">          
                <label for="">Vehicle Reg No</label>
-                <input type="text" name="Vehicle Registration No:" id="plateno">
+                <input type="text" name="Vehicle Registration No:" id="plateno" required>
                 <label for="">Boarding</label>
                 <input type="text" name="Boarding" id="BusFrom">
                 <label for="">Alight</label>
@@ -73,7 +72,7 @@
                 <label for="">Fare</label>
                 <input type="text" name="Fare" id="fare">
                 <label for="">Seat No</label>
-                <input type="text" name="Seat No" id="Seatno">
+                <input type="text" name="Seat No" id="Seatno" required>
                 <br>
                 <button type="submit">Confirm Booking</button>
                 
@@ -124,7 +123,10 @@
       <div id="qrcode"></div>
       
     
-    
+    <footer>
+        <p>All Rights Reserved</p>
+        <p>Public Transport Ticketing System - 2024</p>
+    </footer>
     
 </body>
 <script src="BusRoutes.js"></script>

@@ -6,6 +6,9 @@
     color:#333;
 
 }
+body{
+    background-image: linear-gradient(to right,#a1c4fd,#c2e9fb);
+}
 body,html{
     overflow:hidden;
 }
@@ -42,7 +45,7 @@ body,html{
     
 }
 .searchbox{
-    background:white;
+    background:transparent;
 }
 .row {
     outline: none;
@@ -52,7 +55,7 @@ body,html{
 #Booking{
     margin-top: 1%;
     display:flex;
-    background-color: red;
+    background-color:wheat;
     position: absolute;
      max-width: 100%;
     max-height: 100%;
@@ -106,4 +109,15 @@ header{
     grid-gap: 5px;
     margin-bottom: 20px;
     flex-wrap: wrap;
+}
+footer{
+    position: absolute;
+    right: 25%;
+    top: 97%;
+    transform: translate(-50%,-50%);
+  
+}
+footer p {
+    display: flex;
+    justify-content: center;
 }
