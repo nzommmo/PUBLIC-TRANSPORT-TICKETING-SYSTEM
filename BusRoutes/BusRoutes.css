@@ -121,3 +121,6 @@ footer p {
     display: flex;
     justify-content: center;
 }
+#qrcode{
+    margin: 10px;
+}

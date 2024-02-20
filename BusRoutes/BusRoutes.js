@@ -16,6 +16,7 @@ const alightDiv = document.getElementById("BusTo");
 const plate = document.getElementById("plateno")
 const fareamount  = document.getElementById("fare")
 
+
 inputboxes.forEach((inputbox, index) => {
     inputbox.addEventListener('keyup', function () {
         let result = [];
@@ -128,3 +129,38 @@ document.addEventListener('DOMContentLoaded', function() {
       })
     })
   })
+
+  let qrContentInput =  document.getElementById("qr-content")
+  console.log(qrContentInput)
+  let qrGenerationForm = 
+  document.getElementById("qr-generation-form");
+  let qrCode;
+   
+  function generateQrCode(qrContent) {
+    return new QRCode("qr-code", {
+      text: qrContent,
+      width: 256,
+      height: 256,
+      colorDark: "#000000",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.H,
+    });
+  }
+   
+  // Event listener for form submit event
+  qrGenerationForm.addEventListener("submit", function (event) {
+    // Prevent form submission
+    event.preventDefault();
+    let qrContent = "Boarding Station" + ":" + From.value + "\n" +"Alighting Station" + ":" + TO.value + "\n" +
+    "Fare" + ":" + fare.value;
+    if (qrCode == null) {
+         
+      // Generate code initially
+      qrCode = generateQrCode(qrContent);
+    } else {
+         
+      // If code already generated then make 
+      // again using same object
+      qrCode.makeCode(qrContent);
+    }
+  });

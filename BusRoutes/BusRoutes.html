@@ -61,12 +61,13 @@
     
         </div>
         <div id="Vehiclecontainer">
-         <form id="bookingform" action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="1f6ad7fe-a06a-4931-aee5-6178ec2b3b7a">          
-               <label for="">Vehicle Reg No</label>
-                <input type="text" name="Vehicle Registration No:" id="plateno" required>
+            <form action="/" id="qr-generation-form">
+       <!--  <form id="bookingform" action="https://api.web3forms.com/submit" method="POST"> 
+            <input type="hidden" name="access_key" value="1f6ad7fe-a06a-4931-aee5-6178ec2b3b7a">  -->        
+               <label for="" id="reg">Vehicle Reg No</label>
+                <input type="text"  name="qr-code-content"  id="qr-content" >
                 <label for="">Boarding</label>
-                <input type="text" name="Boarding" id="BusFrom">
+                <input type="text" name="Boarding" id="BusFrom" >
                 <label for="">Alight</label>
                 <input type="text" name="Alight" id="BusTo">
                 <label for="">Fare</label>
@@ -74,12 +75,12 @@
                 <label for="">Seat No</label>
                 <input type="text" name="Seat No" id="Seatno" required>
                 <br>
-                <button type="submit">Confirm Booking</button>
+                <input type="submit" value="Generate QR Code">Confirm Booking</button>
                 
             </form>
             </div>
         </div>
-
+        <div id="qr-code"></div>
     
     
 
@@ -115,12 +116,8 @@
         
     </section>
 
-    <form id="myForm">
-        <label for="data">Enter Data:</label>
-        <input type="text" id="data" name="data">
-        <button type="submit">Generate QR Code</button>
-      </form>
-      <div id="qrcode"></div>
+   
+     
       
     
     <footer>
@@ -128,7 +125,14 @@
         <p>Public Transport Ticketing System - 2024</p>
     </footer>
     
+    
+    
+
+    
+    
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script src="BusRoutes.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4"></script>
 </html>
+
+
