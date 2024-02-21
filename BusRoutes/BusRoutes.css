@@ -124,3 +124,13 @@ footer p {
 #qrcode{
     margin: 10px;
 }
+#webform,#Generate{
+    margin-left:15px ;
+    margin-bottom: 10px;
+    width: 135px;
+    border-radius: 5px;
+    background: black;
+    color: wheat;
+    font-size: 13px;
+    
+}

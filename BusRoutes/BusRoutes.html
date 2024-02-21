@@ -35,7 +35,6 @@
         <div class="searchbox">
             <div class="row">
                 <input type="text" class="input" value=""    id="inputbox" placeholder="Alighting Station" autocomplete="off">
-                <button>search</button>
             </div>
             <div class="resultbox" ></div>
         </div>
@@ -61,9 +60,8 @@
     
         </div>
         <div id="Vehiclecontainer">
-            <form action="/" id="qr-generation-form">
-       <!--  <form id="bookingform" action="https://api.web3forms.com/submit" method="POST"> 
-            <input type="hidden" name="access_key" value="1f6ad7fe-a06a-4931-aee5-6178ec2b3b7a">  -->        
+            <form action="https://api.web3forms.com/submit" method="POST"   id="qr-generation-form">
+            <input type="hidden" name="access_key" value="1f6ad7fe-a06a-4931-aee5-6178ec2b3b7a">          
                <label for="" id="reg">Vehicle Reg No</label>
                 <input type="text"  name="qr-code-content"  id="qr-content" >
                 <label for="">Boarding</label>
@@ -75,7 +73,9 @@
                 <label for="">Seat No</label>
                 <input type="text" name="Seat No" id="Seatno" required>
                 <br>
-                <input type="submit" value="Generate QR Code">Confirm Booking</button>
+                <button type="submit" id="webform">Confirm Booking</button><br>
+
+                <button type="button" value="Generate QR Code" id="Generate">Generate QR Code</button>
                 
             </form>
             </div>

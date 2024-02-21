@@ -129,7 +129,8 @@ document.addEventListener('DOMContentLoaded', function() {
       })
     })
   })
-
+  let qrbutton = document.getElementById("Generate")
+  let webform = document.getElementById("webform")
   let qrContentInput =  document.getElementById("qr-content")
   console.log(qrContentInput)
   let qrGenerationForm = 
@@ -148,7 +149,9 @@ document.addEventListener('DOMContentLoaded', function() {
   }
    
   // Event listener for form submit event
-  qrGenerationForm.addEventListener("submit", function (event) {
+  Generate.addEventListener("click", function (event) {
+    seats.style.display ="none"
+
     // Prevent form submission
     event.preventDefault();
     let qrContent = "Boarding Station" + ":" + From.value + "\n" +"Alighting Station" + ":" + TO.value + "\n" +
@@ -164,3 +167,5 @@ document.addEventListener('DOMContentLoaded', function() {
       qrCode.makeCode(qrContent);
     }
   });
+  
+ 
