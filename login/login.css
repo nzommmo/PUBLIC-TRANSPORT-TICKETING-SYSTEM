@@ -8,10 +8,10 @@ Font-weight: 300;
 
 Line-height: 1.7;
 
-Color: #ffeba7;
+Color: midnightblue;
 
 Background-color: #1f2029;
-background-image:url(img/backgroundimage.jpg) ;
+background-image:url(img/logo.jpg) ;
 background-repeat: no-repeat;
 background-size: cover;
 
@@ -41,7 +41,7 @@ Text-decoration: none;
 /* this is the hoover to link decoration starts*/
 .link {
 
-  Color: #2c9c44;
+  Color: ghostwhite;
 
 }
 
