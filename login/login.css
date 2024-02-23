@@ -1,379 +1,71 @@
-@import url(‘https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900’);
-/*The body and background images for the login page*/
-Body{
+body {
+  background-image: url('../login/img/logo.jpg'); /* Replace 'background-image.jpg' with the path to your background image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
+}
 
-Font-family: ‘Poppins’, sans-serif;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
-Font-weight: 300;
-
-Line-height: 1.7;
-
-Color: midnightblue;
-
-Background-color: #1f2029;
-background-image:url(img/logo.jpg) ;
-background-repeat: no-repeat;
-background-size: cover;
+.card {
+  width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
 
 
 }
-/*media querries for background image start */
 
-/* Media query for smaller screens */
-@media only screen and (max-width: 768px) {
-  body {
-      background-size: cover; 
-  }
-}
-
-/* Media query for larger screens */
-@media only screen and (min-width: 769px) {
-  body {
-      background-size: cover; 
-  }
-}
-/* Media query for background image End */
-A:hover {
-
-Text-decoration: none;
-
-}
-/* this is the hoover to link decoration starts*/
-.link {
-
-  Color: ghostwhite;
-
-}
-
-.link:hover {
-
-  Color: #c4c3ca;
-
-}
-/*link hoover colors End*/
-P {
-
-  Font-weight: 500;
-
-  Font-size: 14px;
-
-}
-/*login font weight*/
-H4 {
-
-  Font-weight: 600;
-
-}
-
-H6 span{
-
-  Padding: 0 20px;
-
-  Font-weight: 700;
-
-}
-
-.section{
-
-  Position: relative;
-
-  Width: 100%;
-
-  Display: block;
-
-}
-
-.full-height{
-
-  Min-height: 100vh;
-
-}
-
-[type=”checkbox”]:checked,
-
-[type=”checkbox”]:not(:checked){
-
-Display: none;
-
-}
-
-.checkbox:checked + label,
-
-.checkbox:not(:checked) + label{
-
-  Position: relative;
-
-  Display: block;
-
-  Text-align: center;
-
-  Width: 60px;
-
-  Height: 16px;
-
-  Border-radius: 8px;
-
-  Padding: 0;
-
-  Margin: 10px auto;
-
-  Cursor: pointer;
-
-  Background-color: #ffeba7;
-
-}
-
-.checkbox:checked + label:before,
-
-.checkbox:not(:checked) + label:before{
-
-  Position: absolute;
-
-  Display: block;
-
-  Width: 36px;
-
-  Height: 36px;
-
-  Border-radius: 50%;
-
-  Color: #0f0f0e;
-
-  Background-color: #1658dc;
-
-  Font-family: ‘unicons’;
-
-  Content: ‘\eb4f’;
-
-  z-index: 20;
-
-  top: -10px;
-
-  left: -10px;
-
-  line-height: 36px;
-
+.card-header {
   text-align: center;
-
   font-size: 24px;
-
-  transition: all 0.5s ease;
-
+  font-weight: bold;
 }
 
-.checkbox:checked + label:before {
-
-  Transform: translateX(44px) rotate(-270deg);
-
+.form-group {
+  margin-bottom: 20px;
+  background-color: transparent;
 }
 
-.card-3d-wrap {
-
-  Position: relative;
-
-  Width: 440px;
-
-  Max-width: 100%;
-
-  Height: 400px;
-
-  -webkit-transform-style: preserve-3d;
-
-  Transform-style: preserve-3d;
-
-  Perspective: 800px;
-
-  Margin-top: 60px;
-
+.form-control {
+  border-radius: 5px;
 }
 
-.card-3d-wrapper {
-
-  Width: 100%;
-
-  Height: 100%;
-
-  Position:absolute;
-
-  -webkit-transform-style: preserve-3d;
-
-  Transform-style: preserve-3d;
-
-  Transition: all 600ms ease-out;
-
-}
-/*the cards background color and other style to the card*/
-.card-front, .card-back {
-
-  Width: 100%;
-
-  Height: 100%;
-
-  Background-color: rgba(255, 0, 0, 0);;
- 
-  Position: absolute;
-
-  Border-radius: 6px;
-
-  -webkit-transform-style: preserve-3d;
-
+.btn {
+  width: 100%;
+  border-radius: 5px;
 }
 
-.card-back {
-
-  Transform: rotateY(180deg);
-
+.card-header {
+  text-align: center;
+  background-color: transparent; /* Set the background color of the header to transparent */
+  border-bottom: none; /* Remove the border bottom */
+  color: black; /* Set text color to white */
 }
 
-.checkbox:checked ~ .card-3d-wrap .card-3d-wrapper {
-
-  Transform: rotateY(180deg);
-
+.card-body {
+  padding: 20px; /* Add padding to the card body */
 }
 
-.center-wrap{
-
-  Position: absolute;
-
-  Width: 100%;
-
-  Padding: 0 35px;
-
-  Top: 50%;
-
-  Left: 0;
-
-  Transform: translate3d(0, -50%, 35px) perspective(100px);
-
-  z-index: 20;
-
-  display: block;
-
+.form-group {
+  margin-bottom: 20px;
 }
 
-.form-group{
-
-  Position: relative;
-
-  Display: block;
-
-    Margin: 0;
-
-    Padding: 0;
-
+.btn-primary {
+  width: 100%;
 }
 
-.form-style {
-
-  Padding: 13px 20px;
-
-  Padding-left: 55px;
-
-  Height: 48px;
-
-  Width: 100%;
-
-  Font-weight: 500;
-
-  Border-radius: 4px;
-
-  Font-size: 14px;
-
-  Line-height: 22px;
-
-  Letter-spacing: 0.5px;
-
-  Outline: none;
-
-  Color: #c4c3ca;
-
-  Background-color: #f2f2f5;
-
-  Border: none;
-
-  -webkit-transition: all 200ms linear;
-
-  Transition: all 200ms linear;
-
-  Box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
-
+.text-center a {
+  color: #007bff;
+  text-decoration: none;
 }
 
-.form-style:focus,
-
-.form-style:active {
-
-  Border: none;
-
-  Outline: none;
-
-  Box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
-
+.text-center a:hover {
+  text-decoration: underline;
 }
-
-.input-icon {
-
-  Position: absolute;
-
-  Top: 0;
-
-  Left: 18px;
-
-  Height: 48px;
-
-  Font-size: 24px;
-
-  Line-height: 48px;
-
-  Text-align: left;
-
-  -webkit-transition: all 200ms linear;
-
-   Transition: all 200ms linear;
-
-}
-/*style to the buttons.*/
-.btn{
-
-  Border-radius: 4px;
-
-  Height: 44px;
-
-  Font-size: 13px;
-
-  Font-weight: 600;
-
-  Text-transform: uppercase;
-
-  -webkit-transition : all 200ms linear;
-
-  Transition: all 200ms linear;
-
-  Padding: 0 30px;
-
-  Letter-spacing: 1px;
-
-  Display: -webkit-inline-flex;
-
-  Display: -ms-inline-flexbox;
-
-  Display: inline-flex;
-
-  Align-items: center;
-
-  Background-color: #fcfcfb;
-
-  Color: #000000;
-
-}
-
-.btn:hover{
-
-  Background-color: #000000;
-
-  Color: #ffeba7;
-
-  Box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
-
-}
-
