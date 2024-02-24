@@ -35,7 +35,6 @@
         <div class="searchbox">
             <div class="row">
                 <input type="text" class="input" value=""    id="inputbox" placeholder="Alighting Station" autocomplete="off">
-                <button>search</button>
             </div>
             <div class="resultbox" ></div>
         </div>
@@ -45,32 +44,103 @@
     <section id="Booking">
         <div id="containerdetails">
             <div id="details">
-                <p>Name:<span id="Name">ERIC</span></p> 
-                <p>From:<span id="From"></span></p> 
-                <p>TO:<span id="TO"></span></p> 
+                <form>
+                    <label for="">Name</label>
+                    <input type="text" name="" id="Name">
+                    <label for="">From</label>
+                    <input type="text" name="" id="From">
+                    <label for="">To</label>
+                    <input type="text" name="" id="TO">
+                    <button id="seatbook" type="button">Book  A Seat</button>
+
+                </form>
     
      
             </div>
     
         </div>
         <div id="Vehiclecontainer">
-                <h1 id="Sacco"></h1>
-                <p>Vehicle Reg No:<span id="plateno" >KDD 019A</span></h3>
-    
-                <p id="BusFrom"> </p>
-                    <p id="BusTo"></p>
-                    <p>Fare:<span id="fare" ></span></h3>
-                    <p>Seat No:<span id="Seatno"></span></p> 
-    
+            <form action="https://api.web3forms.com/submit" method="POST"   id="qr-generation-form">
+            <input type="hidden" name="access_key" value="1f6ad7fe-a06a-4931-aee5-6178ec2b3b7a">          
+               <label for="" id="reg">Vehicle Reg No</label>
+                <input type="text"  name="qr-code-content"  id="qr-content" >
+                <label for="">Boarding</label>
+                <input type="text" name="Boarding" id="BusFrom" >
+                <label for="">Alight</label>
+                <input type="text" name="Alight" id="BusTo">
+                <label for="">Fare</label>
+                <input type="text" name="Fare" id="fare">
+                <label for="">Seat No</label>
+                <input type="text" name="Seat No" id="Seatno" required>
+                <br>
+                <button type="submit" id="webform">Confirm Booking</button><br>
+
+                <button type="button" value="Generate QR Code" id="Generate">Generate QR Code</button>
+                
+            </form>
             </div>
         </div>
+        <div id="qr-code"></div>
     
     
 
     </section>
+    <section id="seatcontainer">
+        <div id="seats">
+            <button id="eric" class="seatbtn">1</button>
+            <button class="seatbtn">2</button>
+            <button class="seatbtn">3</button>
+            <button class="seatbtn">4</button>
+            <button class="seatbtn">5</button>
+            <button class="seatbtn">6</button>
+            <button class="seatbtn">7</button>
+            <button class="seatbtn">8</button>
+            <button class="seatbtn">9</button>
+            <button class="seatbtn">10</button>
+            <button class="seatbtn">11</button>
+            <button class="seatbtn">12</button>
+            <button class="seatbtn">13</button>
+            <button class="seatbtn">14</button>
+            <button class="seatbtn">15</button>
+            <button class="seatbtn">16</button>
+            <button class="seatbtn">17</button>
+            <button class="seatbtn">18</button>
+            <button class="seatbtn">19</button>
+            <button class="seatbtn">20</button>
+               
+        </div>
+       
+        <br>
+        <p>One seat per person</p>
+    
+        
+    </section>
+    <form action="submit.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <input type="submit" value="Submit">
+    </form>
 
+   
+     
+      <section id="footer">
+        <footer>
+            <p>All Rights Reserved</p>
+            <p>Public Transport Ticketing System - 2024</p>
+        </footer>
+
+      </section>
+    
+    
+    
 
     
+    
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script src="BusRoutes.js"></script>
 </html>
+
+

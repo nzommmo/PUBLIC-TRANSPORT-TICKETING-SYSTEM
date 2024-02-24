@@ -6,6 +6,9 @@
     color:#333;
 
 }
+body{
+    background-image: linear-gradient(to right,#a1c4fd,#c2e9fb);
+}
 body,html{
     overflow:hidden;
 }
@@ -42,36 +45,40 @@ body,html{
     
 }
 .searchbox{
-    background:white;
+    background:transparent;
 }
 .row {
     outline: none;
 }
 
-#containerdetails{
-}
+
 #Booking{
-    margin-top: 5%;
-    display: flex;
-    background-color: red;
+    margin-top: 1%;
+    display:flex;
+    background-color:wheat;
     position: absolute;
      max-width: 100%;
-    height: 20%;
-    top: 30%;
+    max-height: 100%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     border-radius: 5px;
 
 
 }
+form input{
+    display:flex
+}
+
 #Booking div{
-    margin-top: 5%;
+    margin-top: 2%;
     display:block;
     margin-inline-start: 10px;
     margin-inline-end: 20px;
-
-
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
+
 #Booking details{
     margin-left: -10px;
 }
@@ -79,4 +86,68 @@ header{
     margin-top: 2%;
     display: flex;
     justify-content: center;
+}
+#seatbook{
+    background: black;
+    color: wheat;
+    margin-top: 30px;
+    border-radius: 5px;
+    margin-inline: 2px;
+}
+#seatcontainer{
+    margin-top: 10px;
+    position: absolute;
+    top: 40%;
+    right: 15%;
+    display: none;
+
+}
+#seats{
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(40px,1fr));
+    grid-gap: 5px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+/*
+footer{
+    position: absolute;
+    right: 25%;
+    top: 97%;
+    transform: translate(-50%,-50%);
+
+  
+}*/
+footer p {
+    display: flex;
+    justify-content: center;
+}
+#qrcode{
+    margin: 10px;
+}
+#webform,#Generate{
+    margin-left:15px ;
+    margin-bottom: 10px;
+    width: 135px;
+    border-radius: 5px;
+    background: black;
+    color: wheat;
+    font-size: 13px;
+    
+}
+label{
+    font-size: 17px;
+    
+}
+#footer{
+    width: 100%;
+    position: absolute;
+    display: block;
+    top: 95%;
+    background-color:black;
+    
+}
+footer p{
+    color: whitesmoke;
 }
