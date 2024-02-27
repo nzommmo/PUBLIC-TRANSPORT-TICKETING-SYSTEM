@@ -2,7 +2,7 @@
 
 ---
 ##project definition
- Live preview at [www.ticketing.com](https://nzommmo.github.io/PUBLIC-TRANSPORT-TICKETING-SYSTEM/)
+ Live preview at [www.ticketing.com](http://ticketingsystem.wuaze.com/index.html)
 ## Overview
 
 Transport Ticketing System is a web-based application developed in PHP for managing ticket reservations and sales for transportation services. This README file provides instructions on how to run the application locally and how to contribute to the project on GitHub.
@@ -30,4 +30,4 @@ Open a web browser and navigate to http://localhost/transport-ticketing-system t
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/transport-ticketing-system.git
+git clone https://github.com/nzommmo/transport-ticketing-system.git
