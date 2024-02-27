@@ -30,4 +30,4 @@ Open a web browser and navigate to http://localhost/transport-ticketing-system t
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/transport-ticketing-system.git
+git clone https://github.com/nzommmo/transport-ticketing-system.git
