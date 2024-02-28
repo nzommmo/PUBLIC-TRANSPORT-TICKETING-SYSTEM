@@ -68,6 +68,18 @@ Welcome to public transport ticketing system
     <!-- logged in user information -->
 
 </div>
+<<<<<<< HEAD
+<!-- Bootstrap JS and Popper.js CDN links -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Wow.js CDN link -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<!-- Initialize Wow.js -->
+<script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" type="module"></script>
+=======
 
+>>>>>>> d82be8200f37ed47a52bb873f6a6ac4d736701fd
 </body>
 </html>

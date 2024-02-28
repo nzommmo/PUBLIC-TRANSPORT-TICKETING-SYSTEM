@@ -9,6 +9,12 @@
             var(--c) ,var(--r1),var(--r2),
             var(--c) ,var(--r1),var(--r2),
             var(--c) ,var(--r1),var(--r2);
+<<<<<<< HEAD
+    background-repeat: no-repeat;
+    animation: l2 1s infinite alternate;
+}
+@keyframes l2 {
+=======
     background-repeat: no-repeat;
     animation: l2 1s infinite alternate;
 }
@@ -27,6 +33,7 @@
   }
   @keyframes l2 {
 >>>>>>> 79b934e923983023e874a278ee0a71796edba92c
+>>>>>>> d82be8200f37ed47a52bb873f6a6ac4d736701fd
     0%,25% {
         background-size: 8px 0,8px 4px,8px 4px,8px 0,8px 4px,8px 4px,8px 0,8px 4px,8px 4px;
         background-position: 0 50%,0 calc(50% - 2px),0 calc(50% + 2px),50% 50%,50% calc(50% - 2px),50% calc(50% + 2px),100% 50%,100% calc(50% - 2px),100% calc(50% + 2px);
