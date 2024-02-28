@@ -1,17 +1,20 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!-- submit.php -->
+=======
+>>>>>>> d82be8200f37ed47a52bb873f6a6ac4d736701fd
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    
-    // Display the submitted data
-    echo "Name: $name <br>";
-    echo "Email: $email";
-} else {
-    // Handle non-POST requests
-    echo "Form submission failed!";
+$username = "";
+$email = "";
+
+$db = mysqli_connect(hostname:'localhost',username:'root',password:'',database:'booking details');
+
+
+// Check connection
+if ($db->connect_error) {
+    die("Connection failed: " . $db->connect_error);
 }
+<<<<<<< HEAD
 =======
 <?php
 $username = "";
@@ -24,6 +27,8 @@ $db = mysqli_connect(hostname:'localhost',username:'root',password:'',database:'
 if ($db->connect_error) {
     die("Connection failed: " . $db->connect_error);
 }
+=======
+>>>>>>> d82be8200f37ed47a52bb873f6a6ac4d736701fd
 
 // Retrieve form data
 $Name = $_POST['Name'];
@@ -48,5 +53,8 @@ if ($db->query($sql) === TRUE) {
 
 // Close connection
 $db->close();
+<<<<<<< HEAD
+>>>>>>> d82be8200f37ed47a52bb873f6a6ac4d736701fd
+=======
 >>>>>>> d82be8200f37ed47a52bb873f6a6ac4d736701fd
 ?>
