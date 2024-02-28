@@ -27,89 +27,73 @@ if ($db->connect_error) {
     die("Connection failed: " . $db->connect_error);
 }
 
+// Initialize variables to store selected data
+$routeNumber = $boardingStation = $alightingStation = "";
+
+// Handle form submission
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve selected data from form inputs
+    $routeNumber = $_POST["RouteNumber"];
+    $boardingStation = $_POST["BoardingStation"];
+    $alightingStation = $_POST["AlightingStation"];
+}
+
+// Display first form to select route number, boarding station, and alighting station
+echo '<form action="" method="POST">';
+echo '<label for="RouteNumber">Select Your Route Number:</label>';
+echo '<input type="text" name="RouteNumber" id="RouteNumber" list="routeList" value="' . $routeNumber . '">';
+echo '<datalist id="routeList">';
 // Retrieve and display options from routes table
 $sql = "SELECT RouteNo FROM routes";
 $result = $db->query($sql);
-
-if ($result->num_rows > 0) {
-    echo '<form action="../BusRoutes/form.php" method="POST">';
-    echo '<label for="dropdown">Select Your Route Number:</label>';
-   
-    
-    echo '<select name="dropdown" id="Routenumber">';
-    while ($row = $result->fetch_assoc()) {
-        echo "<option value='" . $row[""] . "'>" . $row["RouteNo"] . "</option>";
-    }
-    echo '</select>';
-    echo '<input type="submit" value="Submit">';
-    echo '</form>';
-} else {
-    echo "<option value=''>No options available</option>";
+while ($row = $result->fetch_assoc()) {
+    echo "<option value='" . $row["RouteNo"] . "'>" . $row["RouteNo"] . "</option>";
 }
+echo '</datalist><br>';
 
-
-
+echo '<label for="BoardingStation">Boarding Station:</label>';
+echo '<input type="text" name="BoardingStation" id="BoardingStation" list="stationList" value="' . $boardingStation . '">';
+echo '<datalist id="stationList">';
+// Retrieve and display options from stations table
 $sql = "SELECT Station_Name FROM stations";
 $result = $db->query($sql);
-
-if ($result->num_rows > 0) {
-    echo '<form action="../BusRoutes/form.php" method="POST">';
-    echo '<label for="dropdown">Boarding Station:</label>';
-   
-    
-    echo '<select name="dropdown" id="Routenumber">';
-    while ($row = $result->fetch_assoc()) {
-        echo "<option value='" . $row[""] . "'>" . $row["Station_Name"] . "</option>";
-    }
-    echo '</select>';
-    echo '<input type="submit" value="Submit">';
-    echo '</form>';
-} else {
-    echo "<option value=''>No options available</option>";
+while ($row = $result->fetch_assoc()) {
+    echo "<option value='" . $row["Station_Name"] . "'>" . $row["Station_Name"] . "</option>";
 }
-$sql = "SELECT RouteNo FROM routes";
-$result = $db->query($sql);
+echo '</datalist><br>';
 
-
-
+echo '<label for="AlightingStation">Alighting Station:</label>';
+echo '<input type="text" name="AlightingStation" id="AlightingStation" list="stationList" value="' . $alightingStation . '">';
+echo '<datalist id="stationList">';
+// Retrieve and display options from stations table for alighting station
 $sql = "SELECT Station_Name FROM stations";
 $result = $db->query($sql);
-
-if ($result->num_rows > 0) {
-    echo '<form action="../BusRoutes/form.php" method="POST">';
-    echo '<label for="dropdown">Alighting Station:</label>';
-   
-    
-    echo '<select name="dropdown" id="Routenumber">';
-    while ($row = $result->fetch_assoc()) {
-        echo "<option value='" . $row[""] . "'>" . $row["Station_Name"] . "</option>";
-    }
-    echo '</select>';
-    echo '<input type="submit" value="Submit">';
-    echo '</form>';
-} else {
-    echo "<option value=''>No options available</option>";
+while ($row = $result->fetch_assoc()) {
+    echo "<option value='" . $row["Station_Name"] . "'>" . $row["Station_Name"] . "</option>";
 }
-$sql = "SELECT RouteNo FROM routes";
-$result = $db->query($sql);
+echo '</datalist><br>';
 
+echo '<input type="submit" value="Submit">';
+echo '</form> <br>';
 
-
-
-
-
-
-
-
-
-
-
+// Display second form with selected input values
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    echo '<form action="../BusRoutes/form.php" method="POST">';
+    echo '<label for="RouteNumber">Selected Route Number:</label>';
+    echo '<input type="text" name="SelectedRoute" value="' . $routeNumber . '"><br>';
+    echo '<label for="BoardingStation">Selected Boarding Station:</label>';
+    echo '<input type="text" name="SelectedBoarding" value="' . $boardingStation . '"><br>';
+    echo '<label for="AlightingStation">Selected Alighting Station:</label>';
+    echo '<input type="text" name="SelectedAlighting" value="' . $alightingStation . '"><br>';
+    echo '<input type="submit" value="Confirm">';
+    echo '</form>';
+}
 ?>
 
 
    </section>
 
-
+<!--
 
 
             <select name="" id="Routenumbers">
@@ -157,9 +141,9 @@ $result = $db->query($sql);
     
         </div>
         <div id="Vehiclecontainer">
-            <form action="../BusRoutes/form.php" method="POST">
+            <form action="../BusRoutes/form.php" method="POST" id="">
 
-            <!--<form action="https://api.web3forms.com/submit" method="POST"   id="qr-generation-form">-->
+            <form action="https://api.web3forms.com/submit" method="POST"   id="qr-generation-form">
             <input type="hidden" name="access_key" value="1f6ad7fe-a06a-4931-aee5-6178ec2b3b7a">  
             <label for="Name">Name</label>
             <input type="text" name="Name" id="user">        
@@ -217,20 +201,6 @@ $result = $db->query($sql);
         
     </section>
        
-
-    <form action="submit.php" method="post">
-
-    <form action="../BusRoutes/form.php" method="POST">
-
-    <form action="../BusRoutes/form.php" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required><br><br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
-        <input type="submit" value="Submit">
-    </form>
-
-   
      
       <section id="footer">
         <footer>
@@ -244,7 +214,7 @@ $result = $db->query($sql);
     
     
 
-    
+            -->    
     
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
