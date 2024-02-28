@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+<!-- submit.php -->
+=======
+>>>>>>> d82be8200f37ed47a52bb873f6a6ac4d736701fd
 <?php
 // Set your database connection parameters
 $hostname = 'localhost';
@@ -12,6 +17,21 @@ $db = new mysqli($hostname, $username, $password, $database);
 if ($db->connect_error) {
     die("Connection failed: " . $db->connect_error);
 }
+<<<<<<< HEAD
+=======
+<?php
+$username = "";
+$email = "";
+
+$db = mysqli_connect(hostname:'localhost',username:'root',password:'',database:'booking details');
+
+
+// Check connection
+if ($db->connect_error) {
+    die("Connection failed: " . $db->connect_error);
+}
+=======
+>>>>>>> d82be8200f37ed47a52bb873f6a6ac4d736701fd
 
 // Retrieve form data (sanitize and validate as needed)
 $Name = mysqli_real_escape_string($db, $_POST['Name']);
@@ -36,4 +56,8 @@ $stmt->close();
 
 // Close connection
 $db->close();
+<<<<<<< HEAD
+>>>>>>> d82be8200f37ed47a52bb873f6a6ac4d736701fd
+=======
+>>>>>>> d82be8200f37ed47a52bb873f6a6ac4d736701fd
 ?>

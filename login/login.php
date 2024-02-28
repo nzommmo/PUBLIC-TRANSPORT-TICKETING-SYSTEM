@@ -32,6 +32,12 @@
                     <p class="text-center">
                         Not yet a member? <a href="register.php">Sign up</a>
                     </p>
+<<<<<<< HEAD
+                    <p class="text-center">
+                        Forgot password? <a href="forgot_password.php">reset</a>
+                    </p>
+=======
+>>>>>>> d82be8200f37ed47a52bb873f6a6ac4d736701fd
                 </form>
             </div>
         </div>
