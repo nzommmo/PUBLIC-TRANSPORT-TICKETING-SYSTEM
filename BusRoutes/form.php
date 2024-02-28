@@ -1,35 +1,38 @@
 <?php
-$username = "";
-$email = "";
+// Set your database connection parameters
+$hostname = 'localhost';
+$username = 'root';
+$password = '';
+$database = 'booking details';
 
-$db = mysqli_connect(hostname:'localhost',username:'root',password:'',database:'booking details');
-
+// Connect to the database
+$db = new mysqli($hostname, $username, $password, $database);
 
 // Check connection
 if ($db->connect_error) {
     die("Connection failed: " . $db->connect_error);
 }
 
-// Retrieve form data
-$Name = $_POST['Name'];
-$RegistrationNo = $_POST['Vehicle_Reg_No'];
-$Boarding = $_POST['Boarding'];
-$Alight = $_POST['Alight'];
-$Fare = $_POST['Fare'];
-$SeatNo = $_POST['Seat_No'];
+// Retrieve form data (sanitize and validate as needed)
+$Name = mysqli_real_escape_string($db, $_POST['Name']);
+$RegistrationNo = mysqli_real_escape_string($db, $_POST['Vehicle_Reg_No']);
+$Boarding = mysqli_real_escape_string($db, $_POST['Boarding']);
+$Alight = mysqli_real_escape_string($db, $_POST['Alight']);
+$Fare = mysqli_real_escape_string($db, $_POST['Fare']);
+$SeatNo = mysqli_real_escape_string($db, $_POST['Seat_No']);
 
+// Insert data into database using prepared statement to prevent SQL injection
+$stmt = $db->prepare("INSERT INTO bookings (First_Name, Departure, Alight, Bus_Reg_No, Seat_No, Fare) VALUES (?, ?, ?, ?, ?, ?)");
+$stmt->bind_param("ssssss", $Name, $Boarding, $Alight, $RegistrationNo, $SeatNo, $Fare);
 
-// Sanitize and validate data (you may add more validation)
-
-
-// Insert data into database
-$sql = "INSERT INTO `bookings`(`First_Name`, `Departure`, `Alight`, `Bus_Reg_No`, `Seat_No`, `Fare`) VALUES ('[$Name]','[$Boarding]','[$Alight]','[$RegistrationNo]','[$SeatNo]','[$Fare]')";
-
-if ($db->query($sql) === TRUE) {
+if ($stmt->execute()) {
     echo "New record created successfully";
 } else {
-    echo "Error: " . $sql . "<br>" . $db->error;
+    echo "Error: " . $stmt->error;
 }
+
+$stmt->close();
+
 
 // Close connection
 $db->close();

@@ -151,3 +151,6 @@ label{
 footer p{
     color: whitesmoke;
 }
+#Routes{
+    display: flex;
+}

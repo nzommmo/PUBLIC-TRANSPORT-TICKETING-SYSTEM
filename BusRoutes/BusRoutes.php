@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="BusRoutes.css">
+    <link rel="stylesheet" href="../BusRoutes/BusRoutes.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bus Routes</title>
@@ -11,10 +11,108 @@
         <h2>Search For a Route</h2>
 
     </header>
-    <div id="routecontainer">
-        <div>
+   <section id="Routes">
+    
+   <?php 
+$hostname = 'localhost';
+$username = 'root';
+$password = '';
+$database = 'booking details';
 
-            <select name="" id="Routenumber">
+// Connect to the database
+$db = new mysqli($hostname, $username, $password, $database);
+
+// Check connection
+if ($db->connect_error) {
+    die("Connection failed: " . $db->connect_error);
+}
+
+// Retrieve and display options from routes table
+$sql = "SELECT RouteNo FROM routes";
+$result = $db->query($sql);
+
+if ($result->num_rows > 0) {
+    echo '<form action="../BusRoutes/form.php" method="POST">';
+    echo '<label for="dropdown">Select Your Route Number:</label>';
+   
+    
+    echo '<select name="dropdown" id="Routenumber">';
+    while ($row = $result->fetch_assoc()) {
+        echo "<option value='" . $row[""] . "'>" . $row["RouteNo"] . "</option>";
+    }
+    echo '</select>';
+    echo '<input type="submit" value="Submit">';
+    echo '</form>';
+} else {
+    echo "<option value=''>No options available</option>";
+}
+
+
+
+$sql = "SELECT Station_Name FROM stations";
+$result = $db->query($sql);
+
+if ($result->num_rows > 0) {
+    echo '<form action="../BusRoutes/form.php" method="POST">';
+    echo '<label for="dropdown">Boarding Station:</label>';
+   
+    
+    echo '<select name="dropdown" id="Routenumber">';
+    while ($row = $result->fetch_assoc()) {
+        echo "<option value='" . $row[""] . "'>" . $row["Station_Name"] . "</option>";
+    }
+    echo '</select>';
+    echo '<input type="submit" value="Submit">';
+    echo '</form>';
+} else {
+    echo "<option value=''>No options available</option>";
+}
+$sql = "SELECT RouteNo FROM routes";
+$result = $db->query($sql);
+
+
+
+$sql = "SELECT Station_Name FROM stations";
+$result = $db->query($sql);
+
+if ($result->num_rows > 0) {
+    echo '<form action="../BusRoutes/form.php" method="POST">';
+    echo '<label for="dropdown">Alighting Station:</label>';
+   
+    
+    echo '<select name="dropdown" id="Routenumber">';
+    while ($row = $result->fetch_assoc()) {
+        echo "<option value='" . $row[""] . "'>" . $row["Station_Name"] . "</option>";
+    }
+    echo '</select>';
+    echo '<input type="submit" value="Submit">';
+    echo '</form>';
+} else {
+    echo "<option value=''>No options available</option>";
+}
+$sql = "SELECT RouteNo FROM routes";
+$result = $db->query($sql);
+
+
+
+
+
+
+
+
+
+
+
+
+?>
+
+
+   </section>
+
+
+
+
+            <select name="" id="Routenumbers">
                 <option disabled selected>Select a Route</option>        
                 <option value="125"> Route 125</option>
                 <option value="48">Route 48</option>
@@ -45,8 +143,7 @@
         <div id="containerdetails">
             <div id="details">
                 <form>
-                    <label for="">Name</label>
-                    <input type="text" name="" id="Name">
+                    
                     <label for="">From</label>
                     <input type="text" name="" id="From">
                     <label for="">To</label>
@@ -60,18 +157,22 @@
     
         </div>
         <div id="Vehiclecontainer">
-            <form action="https://api.web3forms.com/submit" method="POST"   id="qr-generation-form">
-            <input type="hidden" name="access_key" value="1f6ad7fe-a06a-4931-aee5-6178ec2b3b7a">          
-               <label for="" id="reg">Vehicle Reg No</label>
-                <input type="text"  name="qr-code-content"  id="qr-content" >
-                <label for="">Boarding</label>
+            <form action="../BusRoutes/form.php" method="POST">
+
+            <!--<form action="https://api.web3forms.com/submit" method="POST"   id="qr-generation-form">-->
+            <input type="hidden" name="access_key" value="1f6ad7fe-a06a-4931-aee5-6178ec2b3b7a">  
+            <label for="Name">Name</label>
+            <input type="text" name="Name" id="user">        
+               <label for="Vehicle_Reg_No" id="reg">Vehicle Reg No</label>
+                <input type="text"  name="Vehicle_Reg_No"  id="Vehicle-reg" >
+                <label for="Boarding">Boarding</label>
                 <input type="text" name="Boarding" id="BusFrom" >
-                <label for="">Alight</label>
+                <label for="Alight">Alight</label>
                 <input type="text" name="Alight" id="BusTo">
-                <label for="">Fare</label>
-                <input type="text" name="Fare" id="fare">
-                <label for="">Seat No</label>
-                <input type="text" name="Seat No" id="Seatno" required>
+                <label for="Fare">Fare</label>
+                <input type="number" name="Fare" id="fare">
+                <label for="Seat_No">Seat No</label>
+                <input type="number" name="Seat_No" id="Seatno" required>
                 <br>
                 <button type="submit" id="webform">Confirm Booking</button><br>
 
@@ -115,15 +216,7 @@
     
         
     </section>
-    <form action="../BusRoutes/form.php" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required><br><br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
-        <input type="submit" value="Submit">
-    </form>
-
-   
+       
      
       <section id="footer">
         <footer>
@@ -132,6 +225,7 @@
         </footer>
 
       </section>
+      
     
     
     
@@ -142,5 +236,4 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script src="BusRoutes.js"></script>
 </html>
-
 
