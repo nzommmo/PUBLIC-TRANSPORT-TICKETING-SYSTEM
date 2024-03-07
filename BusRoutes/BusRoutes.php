@@ -20,7 +20,7 @@ $password = '';
 $database = 'booking details';
 
 // Connect to the database
-$db = new mysqli($hostname, $username, $password, $database);
+$db = mysqli_connect($hostname, $username, $password, $database);
 
 // Check connection
 if ($db->connect_error) {
@@ -86,6 +86,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo '<label for="AlightingStation">Selected Alighting Station:</label>';
     echo '<input type="text" name="SelectedAlighting" value="' . $alightingStation . '"><br>';
     echo '<input type="submit" value="Confirm">';
+    echo '<input type="submit" value="Confirm">';
+    echo '<input type="submit" value="Confirm">';
+    echo '<input type="submit" value="Confirm">';
+    echo '<input type="submit" value="Confirm">';
+
+
+
     echo '</form>';
 }
 ?>
