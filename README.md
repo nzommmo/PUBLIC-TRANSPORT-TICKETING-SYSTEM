@@ -28,6 +28,7 @@ Start your web server.
 Open a web browser and navigate to http://localhost/transport-ticketing-system to access the application.
 
 ### Clone the Repository
+open your terminal and write the code below
 
 ```bash
 git clone https://github.com/nzommmo/transport-ticketing-system.git
